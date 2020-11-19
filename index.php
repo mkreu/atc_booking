@@ -81,10 +81,13 @@ function next_station_is_same($currentElement, $nextElement)
     return false;
 }
 
-$stationsFile = fopen("allStations.csv", "r") or die("Unable to open file!");
-$allStationsString = fgets($stationsFile);
+$allStationsFile = fopen("allStations.csv", "r") or die("Unable to open file!");
+$allStationsString = fgets($allStationsFile);
 
-$edff_min_stations = ["EDGG_CTR", "EDGG_E_CTR", "EDUU_W_CTR", "EDDF_N_APP", "EDDF_U_APP","EDDF_TWR", "EDDF_C_GND", "EDDF_DEL", "EDDS_N_APP", "EDDS_TWR", "EDDS_GND", "EDDS_DEL"];
+$minStationsFile = fopen("minStations.csv", "r") or die("Unable to open file!");
+$minStationsString = fgets($minStationsFile);
+
+$edff_min_stations = explode(',',$minStationsString);
 $edff_main_stations =  explode(',',$allStationsString);
 
 $booked_stations = get_bookings($edff_main_stations);
