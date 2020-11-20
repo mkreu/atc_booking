@@ -169,7 +169,7 @@ for ($i = 0; $i < count($booked_stations); $i++) {
 
 $booking_matrix = $tempBookingMatrix;
 
-$imageHeight = count($booking_matrix) * 30 + ceil(count($all_users) / 3) * 15;
+$imageHeight = count($booking_matrix) * 30 + ceil(count($all_users) / 3) * 15 + 100;
 $imageWidth = 820;
 
 // Create images
